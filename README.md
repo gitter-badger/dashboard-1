@@ -1,6 +1,6 @@
 BitAge dashboard
 ======
-<strong>Dashboard for a Bitcoin asset overview app, by http://nodedallas.io</strong>
+<strong>Dashboard for a Bitcoin asset overview app by http://nodedallas.io</strong>
 
 ![Nodeschool Dallas logo](https://raw.githubusercontent.com/leongaban/dallas/master/nodeschool-dallas.png)
 
