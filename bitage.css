@@ -1,0 +1,606 @@
+/*=================================================================
+BitAge.io Master Stylesheet ---------------------------------------
+===================================================================
+
+stylesheets/
+|
+|-- modules/            	    # Partials
+|   |-- _reset       	    	# Reset
+|   |-- _base           	    # Imports all the modules
+|   	|-- _animation      	    # CSS animations
+|   	|-- _colors         	    # Colors
+|   	|-- _fonts          	    # Fonts
+|   	|-- _mixins         	    # Imports all mixins & global vars
+|   |-- _defaults       	    # Global Defaults
+|   |-- _inputs         	    # Input styles
+|   |-- _tables         	    # Table styles
+|   |-- _icons          	    # Icons styles
+|   |-- _layout         	    # Layout Views
+|   	|-- header
+|   	|-- footer
+|   	...
+|
+|   |-- _firefox
+|   |-- _queries
+|
+|-- vendors/            	    # CSS or from other projects
+|   |-- _normalize      	    # http://necolas.github.io/normalize.css
+|   ...
+|
+`-- att_partner_exchange	    # Primary Sass file
+*/
+/*! normalize.css v3.0.0 | MIT License | git.io/normalize */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/**
+ * Remove default margin.
+ */
+body {
+  margin: 0; }
+
+/* HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined in IE 8/9.
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block; }
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */ }
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9.
+ * Hide the `template` element in IE, Safari, and Firefox < 22.
+ */
+[hidden],
+template {
+  display: none; }
+
+/* Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+a {
+  background: transparent; }
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+a:active,
+a:hover {
+  outline: 0; }
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+b,
+strong {
+  font-weight: bold; }
+
+/**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+dfn {
+  font-style: italic; }
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari 5, and Chrome.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+mark {
+  background: #ff0;
+  color: #000; }
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9.
+ */
+img {
+  border: 0; }
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+figure {
+  margin: 1em 40px; }
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0; }
+
+/**
+ * Contain overflow in all browsers.
+ */
+pre {
+  overflow: auto; }
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em; }
+
+/* Forms
+   ========================================================================== */
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+/**
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+  margin: 0;
+  /* 3 */ }
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10.
+ */
+button {
+  overflow: visible; }
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8+, and Opera
+ * Correct `select` style inheritance in Firefox.
+ */
+button,
+select {
+  text-transform: none; }
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */ }
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+html input[disabled] {
+  cursor: default; }
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+input {
+  line-height: normal; }
+
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box; }
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Remove default vertical scrollbar in IE 8/9.
+ */
+textarea {
+  overflow: auto; }
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+optgroup {
+  font-weight: bold; }
+
+/* Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+td,
+th {
+  padding: 0; }
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* PIXELS to EM */
+/* TRIANGLE */
+/* FROM BOURBON */
+/* FLEXBOX */
+/* Generated by Font Squirrel (http://www.fontsquirrel.com) on August 22, 2014 */
+@font-face {
+  font-family: 'omnes_light';
+  src: url("../fonts/omnes_att_ii_light-webfont.eot");
+  src: url("../fonts/omnes_att_ii_light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/omnes_att_ii_light-webfont.woff2") format("woff2"), url("../fonts/omnes_att_ii_light-webfont.woff") format("woff"), url("../fonts/omnes_att_ii_light-webfont.ttf") format("truetype"), url("../fonts/omnes_att_ii_light-webfont.svg#omnes_att_iilight") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'omnes_att_iilight_italic';
+  src: url("../fonts/omnes_att_ii_light-italic-webfont.eot");
+  src: url("../fonts/omnes_att_ii_light-italic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/omnes_att_ii_light-italic-webfont.ttf") format("truetype"), url("../fonts/omnes_att_ii_light-italic-webfont.svg#omnes_att_iilight_italic") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'omnes_att_iimedium';
+  src: url("../fonts/omnes_att_ii_medium-webfont.eot");
+  src: url("../fonts/omnes_att_ii_medium-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/omnes_att_ii_medium-webfont.ttf") format("truetype"), url("../fonts/omnes_att_ii_medium-webfont.svg#omnes_att_iimedium") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'omnesatt_iiregular';
+  src: url("../fonts/omnes_att_ii-regular-webfont.eot");
+  src: url("../fonts/omnes_att_ii-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/omnes_att_ii-regular-webfont.ttf") format("truetype"), url("../fonts/omnes_att_ii-regular-webfont.svg#omnesatt_iiregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'omnes_att_iimedium_italic';
+  src: url("../fonts/omnes_att_ii_medium-italic-webfont.eot");
+  src: url("../fonts/omnes_att_ii_medium-italic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/omnes_att_ii_medium-italic-webfont.woff2") format("woff2"), url("../fonts/omnes_att_ii_medium-italic-webfont.woff") format("woff"), url("../fonts/omnes_att_ii_medium-italic-webfont.ttf") format("truetype"), url("../fonts/omnes_att_ii_medium-italic-webfont.svg#omnes_att_iimedium_italic") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'clearviewbold';
+  src: url("../fonts/clvatt-bold-webfont.eot");
+  src: url("../fonts/clvatt-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/clvatt-bold-webfont.woff2") format("woff2"), url("../fonts/clvatt-bold-webfont.woff") format("woff"), url("../fonts/clvatt-bold-webfont.ttf") format("truetype"), url("../fonts/clvatt-bold-webfont.svg#clearviewattregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'clearviewattregular';
+  src: url("../fonts/clvatt-book-webfont.eot");
+  src: url("../fonts/clvatt-book-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/clvatt-book-webfont.ttf") format("truetype"), url("../fonts/clvatt-book-webfont.svg#clearviewattregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'clearviewattlight';
+  src: url("../fonts/clvatt-light-webfont.eot");
+  src: url("../fonts/clvatt-light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/clvatt-light-webfont.woff2") format("woff2"), url("../fonts/clvatt-light-webfont.woff") format("woff"), url("../fonts/clvatt-light-webfont.ttf") format("truetype"), url("../fonts/clvatt-light-webfont.svg#clearviewattlight") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+/* APP ANIMATIONS
+====================================================
+==================================================== */
+.reveal-animation.ng-hide.ng-hide-add-active {
+  display: block !important; }
+
+.reveal-animation.ng-hide-remove {
+  -webkit-animation: enter_sequence .5s linear;
+  /* Safari/Chrome */
+  animation: enter_sequence .5s linear;
+  /* IE10+ and Future Browsers */ }
+
+.reveal-animation.ng-hide-add {
+  -webkit-animation: leave_sequence .5s linear;
+  /* Safari/Chrome */
+  animation: leave_sequence .5s linear;
+  /* IE10+ and Future Browsers */ }
+
+@-webkit-keyframes enter_sequence {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@keyframes enter_sequence {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-webkit-keyframes leave_sequence {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+@keyframes leave_sequence {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+/* START OF BITAGE STYLES | DEFAULTS
+====================================================
+==================================================== */
+html, body {
+  width: 100%;
+  height: 100%; }
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 1em;
+  overflow-x: hidden;
+  background: #f7f7f7; }
+
+sup, sub {
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em;
+  left: 0.15em; }
+
+sub {
+  bottom: -0.25em; }
+
+.register_container {
+  margin-top: 40px; }
+
+/* LAYOUTS
+====================================================
+==================================================== */
+#main_logo {
+  cursor: pointer; }
+
+/* FOOTER STYLES
+====================================================
+==================================================== */
+footer {
+  position: absolute;
+  bottom: 20px; }
+
+/*  SVG background images
+====================================================
+==================================================== */
+/*  RESPONSIVE MEDIA QUERIES
+====================================================
+==================================================== */
+/* 1600
+==================================================== */
+/* 1400
+==================================================== */
+/* 1300
+==================================================== */
+/* 1260
+==================================================== */
+/* 1200
+==================================================== */
+/* 1100
+==================================================== */
+/* 1000
+==================================================== */
+/* 990
+==================================================== */
+/* 900
+==================================================== */
+/* 850
+==================================================== */
+/* 800
+==================================================== */
+/* 768 (Mobile Break)
+==================================================== */
+/* 740
+==================================================== */
+/* 640
+==================================================== */
+/* 600
+==================================================== */
+/* 500
+==================================================== */
+/* 400
+==================================================== */
+/* 360
+==================================================== */
