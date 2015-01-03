@@ -12,5 +12,6 @@ What's a NodeSchool?
 ![Bitcoin logo](https://raw.githubusercontent.com/leongaban/dashboard/master/_sources/images/bitcoin.png)
 
 What is Bitcoin?
+------
 * https://www.youtube.com/watch?v=Gc2en3nHxA4
 * The future of money

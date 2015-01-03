@@ -3,86 +3,85 @@
 <html>
 <head>
     <title>BitAge</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,600,800' rel='stylesheet' type='text/css'>
     <link href="bitage.css" rel="stylesheet">
 </head>
 
 <body>
-    <style>
-        #wrapper {
-          padding-left: 250px;
-          transition: all 0.4s ease 0s;
-        }
 
-        #sidebar-wrapper {
-          margin-left: -250px;
-          left: 250px;
-          width: 250px;
-          background: #000;
-          position: fixed;
-          height: 100%;
-          overflow-y: auto;
-          z-index: 1000;
-          transition: all 0.4s ease 0s;
-        }
+    <div id="wrapper">
 
-        #page-content-wrapper {
-          width: 100%;
-        }
+        <div class="avatar">
+            <img src="_sources/images/leon.png" alt="user avatar" />
+        </div>
 
-        .sidebar-nav {
-          position: absolute;
-          top: 0;
-          width: 250px;
-          list-style: none;
-          margin: 0;
-          padding: 0;
-        }
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand"><a href="#">BitAge</a></li>
+                <li><a href="#">My Wallet</a></li>
+                <li class="active-tab"><a href="#">Accounts</a></li>
+                <li><a href="#">Settings</a></li>
+            </ul>
+        </div>
 
-        @media (max-width:767px) {
+        <div id="page-content-wrapper">
+            <div class="page-content">
 
-            #wrapper {
-              padding-left: 0;
-            }
-
-            #sidebar-wrapper {
-              left: 0;
-            }
-
-            #wrapper.active {
-              position: relative;
-              left: 250px;
-            }
-
-            #wrapper.active #sidebar-wrapper {
-              left: 250px;
-              width: 250px;
-              transition: all 0.4s ease 0s;
-            }
-        }
-    </style>
-
-
-<div id="wrapper">
-    <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-            <li class="sidebar-brand"><a href="#">Home</a></li>
-            <li><a href="#">Another link</a></li>
-            <li><a href="#">Next link</a></li>
-            <li><a href="#">Last link</a></li>
-        </ul>
-    </div>
-    <div id="page-content-wrapper">
-        <div class="page-content">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <!-- content of page -->
+                <div class="widget-container added_address">
+                    <p class="address_label">Coinbase wallet</p>
+                    <em class="address_balance">BTC 0.003</em>
+                    <div class="qr_btn">
+                        <img src="_sources/images/qr_smll.png" alt=""/>
                     </div>
+                    <div class="btc_public_address">
+                        14TKW5r2EDhGPHsrsbPrbZq9ZXm96SP68W
+                    </div>
+                </div>
+
+                <div class="widget-container added_address">
+                    <p class="address_label">Xapo wallet</p>
+                    <em class="address_balance">BTC 0.006</em>
+                    <div class="qr_btn">
+                        <img src="_sources/images/qr_smll.png" alt=""/>
+                    </div>
+                    <div class="btc_public_address">
+                        13sizB7zFU9wrxotFAVniG6cJBA9fXzhea
+                    </div>
+                </div>
+
+                <div class="widget-container added_address">
+                    <p class="address_label">Wood wallet</p>
+                    <em class="address_balance">BTC 1</em>
+                    <div class="qr_btn">
+                        <img src="_sources/images/qr_smll.png" alt=""/>
+                    </div>
+                    <div class="btc_public_address">
+                        1Chdd6A8CoqXP4Skz7P6tpxB9uKFgLdYgA
+                    </div>
+                </div>
+
+                <div class="widget-container total_widget">
+                    <p class="total_label">Total:</p>
+                    <p class="total_btc">1.009</p>
+                    <em class="denomination">BTC</em>
+                </div>
+
+                <div class="widget-container">
+                    <form id="add_new_address_form" ng-submit="addComment()">
+                        <p>Add: </p>
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Account name" ng-model="account_name"></input>
+                            <input type="text" class="form-control" placeholder="Public address" ng-model="address"></input>
+                        </div>
+
+                        <button type="submit" class="btn_add_adress">Add</button>
+                    </form>
                 </div>
             </div>
         </div>
+
     </div>
-</div>
 
 </body>
 </html>

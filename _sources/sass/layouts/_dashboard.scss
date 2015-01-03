@@ -1,0 +1,180 @@
+#wrapper {
+    padding-left: 250px;
+    transition: all 0.4s ease 0s;
+}
+
+#sidebar-wrapper {
+    position: fixed;
+    margin-left: -250px;
+    height: 100%;
+    left: 250px;
+    width: 250px;
+    color: #fff;
+    background: #535E5E;
+    overflow-y: auto;
+    z-index: 1000;
+    transition: all 0.4s ease 0s;
+}
+
+#page-content-wrapper {
+    
+}
+
+.page-content {
+    position: absolute;
+    width: 100%;
+}
+
+.widget-container {
+    position: relative;
+    top: 60px;
+    margin: 1px 20px;
+    padding: 20px;
+    // width: 100%;
+    background: #fff;
+    z-index: 2;
+
+    form {
+        line-height: 30px;
+
+        p, div, button {
+            float: left;
+            margin-left: 10px;
+        }
+    }
+}
+
+// .address_label,
+.btc_public_address,
+.address_balance,
+.qr_btn {
+    float: left;
+    // margin-left: 10px;
+}
+
+.address_label {
+    font-size: em(12);
+    font-weight: 600;
+    line-height: 5px;
+    margin-bottom: 10px;
+}
+
+.address_balance {
+    width: 80px;
+    min-width: 60px;
+    padding: 10px;
+    background: #f7f7f7;
+    z-index: 3;
+    @include rounded(4px);
+}
+
+.btc_public_address {
+    margin-left: 10px;
+    line-height: 30px;
+    margin-top: 3px;
+    font-size: em(11);
+    color: #535E5E;
+}
+
+.qr_btn {
+    margin-left: 15px;
+    position: relative;
+    top: 10px;
+    cursor: pointer;
+}
+
+.total_label,
+.total_btc,
+.denomination {
+    float: left;
+}
+
+.total_btc {
+    margin-left: 15px;
+    font-weight: 600;
+    color: $green;
+}
+
+.denomination {
+    margin-left: 10px;
+    font-size: em(8);
+}
+
+.form-control {
+    margin-bottom: 5px;
+    padding: 4px 10px;
+    background: #eee;
+}
+
+.btn_add_adress {
+    padding: 0px 15px;
+    color: #fff;
+    background: $green;
+
+    &:hover {
+        background: darken($green, 15%);
+    }
+}
+
+.form-control,
+.btn_add_adress {
+    border: 0;
+    @include rounded(4px);
+}
+
+.sidebar-nav {
+    position: absolute;
+    top: 20px;
+    text-indent: 20px;
+    width: 250px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li:not(.sidebar-brand) {
+        line-height: 40px;
+        border-bottom: 1px solid #535E5E;
+        &:hover { background: #646E6E; }
+    }
+
+    a {
+        display: block;
+        font-size: em(18);
+        color: #eee;
+        text-decoration: none;
+    }
+}
+
+li.active-tab {
+    background: #646E6E;
+}
+
+li.sidebar-brand {
+    margin-bottom: 20px;
+    font-weight: 800;
+    font-size: em(32);
+}
+
+.avatar {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px; 
+    cursor: pointer;
+    border: 2px solid #fff;
+    box-shadow: 1px 1px 5px #ccc;
+    z-index: 3;
+
+    img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+.added_address,
+.total_widget,
+#add_new_address_form {
+    @include clearfix;
+}
